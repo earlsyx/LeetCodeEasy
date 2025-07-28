@@ -43,7 +43,7 @@ namespace LeetCodeEasy.Arrays.Easy
         }
 
 
-        //HashMap (One Pass)
+        //HashMap (One Pass) o(n)
         public int[] TwoSum(int[] nums, int target)
         {
             Dictionary<int, int> prevMap = new Dictionary<int, int>();
