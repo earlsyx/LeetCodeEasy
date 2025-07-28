@@ -61,5 +61,33 @@ namespace LeetCodeEasy.Arrays.Easy
         }
 
 
+        //HashTable (Using Array)
+        //Time complexity: O(n+m)
+        //Space complexity: O(1) since we have at most 26 different characters
+        public bool IsAnagram(string s, string t)
+        {
+            if (s.Length != t.Length)
+            {
+                return false;
+            }
+
+            int[] counts = new int[26];
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                counts[s[i] - 'a']++;
+                counts[t[i] - 'a']--;
+            }
+
+            foreach(var val in counts)
+            {
+                if (val != 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;    
+        }
     }
 }
